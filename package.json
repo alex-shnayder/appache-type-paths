@@ -27,5 +27,8 @@
   },
   "peerDependencies": {
     "appache": "^0.5.0"
+  },
+  "dependencies": {
+    "globby": "^6.1.0"
   }
 }

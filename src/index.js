@@ -4,7 +4,7 @@ const coercers = require('./coercers')
 const validators = require('./validators')
 
 
-const TYPES = ['path']
+const TYPES = ['path', 'glob']
 
 
 function processOption(option) {

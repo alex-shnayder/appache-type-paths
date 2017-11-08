@@ -1,5 +1,6 @@
 const Os = require('os')
 const Path = require('path')
+const globby = require('globby')
 
 
 exports.path = function coercePath(base, value) {
@@ -16,4 +17,11 @@ exports.path = function coercePath(base, value) {
   }
 
   return Path.resolve(base, value)
+}
+
+exports.glob = function coerceGlob(base, value) {
+  return globby.sync(value, {
+    cwd: base,
+    absolute: true,
+  })
 }
