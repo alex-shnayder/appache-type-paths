@@ -30,7 +30,7 @@ function processOption(option) {
 
 
 module.exports = function* typePathsPlugin() {
-  yield hook('schema', function* (schema) {
+  yield hook('schematize', function* (schema) {
     schema = modifySchema(schema)
     return yield next(schema)
   })
