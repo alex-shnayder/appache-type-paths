@@ -36,18 +36,20 @@ module.exports = function* typePathsPlugin() {
   })
 
   yield preHook({
-    event: 'process',
+    event: 'execute',
     tags: ['modifyOption'],
-  }, (config, command) => {
-    let { options } = command
+  }, (config, batch) => {
+    batch = batch.map((command) => {
+      let { options } = command
 
-    if (!options || !options.length) {
-      return
-    }
+      if (options && options.length) {
+        options = options.map(processOption)
+        command = Object.assign({}, command, { options })
+      }
 
-    options = options.map(processOption)
-    command = Object.assign({}, command, { options })
+      return command
+    })
 
-    return [config, command]
+    return [config, batch]
   })
 }
