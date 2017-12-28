@@ -3,9 +3,9 @@
   "version": "0.1.1",
   "description": "",
   "author": "Alex Shnayder <alex@shnayder.pro>",
-  "repository": "alex-shnayder/appache-type-paths",
-  "homepage": "https://github.com/alex-shnayder/appache-type-paths#readme",
-  "bugs": "https://github.com/alex-shnayder/appache-type-paths/issues",
+  "repository": "appache/appache-type-paths",
+  "homepage": "https://github.com/appache/appache-type-paths#readme",
+  "bugs": "https://github.com/appache/appache-type-paths/issues",
   "license": "ISC",
   "scripts": {
     "precommit": "lint-staged",
